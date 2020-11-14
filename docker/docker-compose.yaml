@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  json-server:
+    build: . # vai utilizar Dockerfile do diretório atual .
+    ports: # cumpre o papel da flag --publish (-p)
+      - 3000:3000
+    volumes: # cria nosso data mount com o arquivo de dados que iremos servir
+      - ./dados.json:/json-server-app/dados.json
+
